@@ -212,10 +212,7 @@ class List {
 
         if (this.orderingTasksByDueDate) {
             this.orderByDueDateButton.classList.add(className);
-
-            this.tasks.sort((a, b) => {
-                return new Date(a.date) - new Date(b.date);
-            });
+            this.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
         } else {
             this.orderByDueDateButton.classList.remove(className);
             this.loadFromLocalStorage();
