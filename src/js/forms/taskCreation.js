@@ -12,7 +12,7 @@ class TaskCreationForm extends Form {
     }
 
     bindEventListeners() {
-        this.confirmbutton?.addEventListener("click", () => this.confirm());
+        this.confirmButton?.addEventListener("click", () => this.confirm());
         this.closeButton?.addEventListener("click", () => super.hide());
     }
 

@@ -10,12 +10,11 @@ class TaskEditionForm extends Form {
         this.taskName = document.getElementById("task-detail-name");
         this.taskDate = document.getElementById("task-detail-date");
         this.taskContent = document.getElementById("task-detail-content");
+        this.saveButton = document.getElementById("save-task-button");
     }
 
     bindEventListeners() {
-        const saveButton = document.getElementById("save-task-button");
-
-        saveButton.addEventListener("click", () => {
+        this.saveButton?.addEventListener("click", () => {
             this.saveChanges();
             super.hide();
         });
