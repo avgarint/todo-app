@@ -8,9 +8,7 @@ class SettingsForm extends Form {
     }
 
     initElements() {
-        this.settingsButton = document.getElementById(
-            "application-settings-button"
-        );
+        this.settingsButton = document.getElementById("application-settings-button");
         this.colorPicker = document.getElementById("color-picker");
         this.colorPalette = document.getElementById("board-bg-color-palette");
         this.colors = this.colorPalette?.querySelectorAll("div");
@@ -56,7 +54,4 @@ class SettingsForm extends Form {
 }
 
 const settingsFormDom = document.getElementById("settings-form");
-const settingsForm = new SettingsForm(
-    settingsFormDom,
-    document.getElementById("list-container")
-);
+const settingsForm = new SettingsForm(settingsFormDom, document.getElementById("list-container"));

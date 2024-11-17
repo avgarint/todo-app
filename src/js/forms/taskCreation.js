@@ -2,19 +2,18 @@ class TaskCreationForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
 
+        this.initElements();
         this.bindEventListeners();
     }
 
-    bindEventListeners() {
-        const confirmbutton = document.getElementById(
-            "task-form-confirm-creation"
-        );
-        const closeButton = document.getElementById(
-            "close-task-creation-form-button"
-        );
+    initElements() {
+        this.confirmButton = document.getElementById("task-form-confirm-creation");
+        this.closeButton = document.getElementById("close-task-creation-form-button");
+    }
 
-        confirmbutton.addEventListener("click", () => this.confirm());
-        closeButton.addEventListener("click", () => super.hide());
+    bindEventListeners() {
+        this.confirmbutton?.addEventListener("click", () => this.confirm());
+        this.closeButton?.addEventListener("click", () => super.hide());
     }
 
     show(list) {
@@ -39,7 +38,4 @@ class TaskCreationForm extends Form {
 }
 
 const taskCreationFormDOM = document.getElementById("task-creation-form");
-const taskCreationForm = new TaskCreationForm(
-    taskCreationFormDOM,
-    listContainer
-);
+const taskCreationForm = new TaskCreationForm(taskCreationFormDOM, listContainer);

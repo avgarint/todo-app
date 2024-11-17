@@ -7,27 +7,17 @@ class ListCreationForm extends Form {
     }
 
     initElements() {
-        this.createNewListButton = document.getElementById(
-            "create-new-list-button"
-        );
+        this.createNewListButton = document.getElementById("create-new-list-button");
         this.listNameInput = document.getElementById("list-name-input");
-        this.confirmCreationButton = document.getElementById(
-            "list-form-confirm-creation"
-        );
-        this.closeButton = document.getElementById(
-            "close-list-creation-form-button"
-        );
+        this.confirmCreationButton = document.getElementById("list-form-confirm-creation");
+        this.closeButton = document.getElementById("close-list-creation-form-button");
     }
 
     bindEventListeners() {
         this.createNewListButton?.addEventListener("click", () => this.show());
         this.closeButton?.addEventListener("click", () => this.hide());
-        this.listNameInput?.addEventListener("input", () =>
-            this.validateListName()
-        );
-        this.confirmCreationButton?.addEventListener("click", () =>
-            this.handleListCreation()
-        );
+        this.listNameInput?.addEventListener("input", () => this.validateListName());
+        this.confirmCreationButton?.addEventListener("click", () => this.handleListCreation());
     }
 
     show() {
@@ -78,7 +68,4 @@ class ListCreationForm extends Form {
 }
 
 const listCreationFormDOM = document.getElementById("list-creation-form");
-const listCreationForm = new ListCreationForm(
-    listCreationFormDOM,
-    document.getElementById("list-container")
-);
+const listCreationForm = new ListCreationForm(listCreationFormDOM, document.getElementById("list-container"));

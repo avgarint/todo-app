@@ -2,13 +2,16 @@ class Form {
     constructor(domParent, listContainer) {
         this.dom = domParent;
         this.listContainer = listContainer;
+        
         this.isVisible = false;
     }
 
     show({ blur = false } = {}) {
         if (!this.isVisible) {
             this.dom.classList.remove("hidden");
-            if (blur) this.listContainer?.classList.add("blurred");
+            if (blur) {
+                this.listContainer?.classList.add("blurred");
+            }
             this.isVisible = true;
         }
     }

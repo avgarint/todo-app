@@ -8,9 +8,7 @@ class CSVImportForm extends Form {
 
     initElements() {
         this.textArea = this.dom.querySelector("#csv-import-form-input-text");
-        this.closeButton = this.dom.querySelector(
-            "#close-csv-import-form-button"
-        );
+        this.closeButton = this.dom.querySelector("#close-csv-import-form-button");
         this.loadButton = this.dom.querySelector("#load-csv-button");
     }
 
