@@ -1,0 +1,27 @@
+@media only screen and (max-width : 600px) {
+    .application-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1%;
+    }
+
+    .application-logo {
+        margin-right: 35%;
+    }
+
+    #create-new-list-button {
+        display: none;
+    }
+
+    #list-container {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .list {
+        display: block;
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}

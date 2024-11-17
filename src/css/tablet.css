@@ -1,0 +1,13 @@
+@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {
+    .list-header-buttons-holder {
+        display: flex;
+        vertical-align: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .list-header-buttons-holder input {
+        width: 90%;
+        margin-bottom: 2%;
+    }
+}

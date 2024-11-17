@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+:root {
+    --button-box-shadow-color: #0000001a;
+    --list-background-color: #E7E7E7;
+    --application-header-background-color: #1a7197;
+    --application-header-button-background-color: #ffffff4d;
+}
+
+/* Input text placeholder */
+::placeholder {
+    color: white;
+    opacity: 1;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background-color: var(--default-grey-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 0px 5px 15px var(--button-box-shadow-color);
+}
+
+/* Application header */
+
+.application-header {
+    background-color: var(--application-header-background-color);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.application-logo {
+    margin: 0;
+    margin-right: 60%;
+    color: white;
+    font-family: 'Gochi Hand', cursive;
+}
+
+#application-settings-button,
+#application-info-button {
+    width: 25px;
+    height: 25px;
+    background-color: var(--application-header-button-background-color);
+    box-shadow: 0px 5px 15px var(--button-box-shadow-color);
+    border-radius: 6px;
+    padding: 10px 10px;
+}
+
+#application-search-bar {
+    width: 125px;
+    height: 25px;
+    background-color: var(--application-header-button-background-color);
+    border-radius: 6px;
+    padding: 10px 10px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    display: none;
+    /* TODO */
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#list-container {
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 100vh;
+}
+
+#create-new-list-button {
+    vertical-align: top;
+    height: 100%;
+    width: 10%;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: var(--list-background-color);
+    float: none;
+    display: inline-block;
+    zoom: 1;
+    margin: 0 0.65%;
+}
+
+.list {
+    vertical-align: top;
+    height: fit-content;
+    width: 30%;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: var(--list-background-color);
+    float: none;
+    display: inline-block;
+    zoom: 1;
+    margin: 0 0.65%;
+}
+
+.list-header-name {
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.list-header-buttons-holder {
+    display: flex;
+    vertical-align: center;
+    justify-content: space-around;
+}
+
+.task {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0px 5px 15px var(--button-box-shadow-color);
+    overflow-wrap: break-word;
+}
+
+.task:hover {
+    cursor: move;
+}
+
+.task-name,
+.task-date,
+.task-content {
+    margin: 0;
+}
+
+.task-name {
+    color: red;
+    margin-left: 6px;
+}
+
+.task-date,
+.task-content {
+    margin-left: 6px;
+}
+
+.task-content {
+    word-wrap: break-all;
+    white-space: normal;
+}
+
+.list-header-buttons-holder input {
+    border-style: dashed;
+    border-color: grey;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px var(--button-box-shadow-color);
+    width: 30px;
+    height: 30px;
+}
+
+.task-delete-button {
+    width: 22px;
+    height: 22px;
+}
+
+#csv-import-form,
+#list-creation-form,
+#info-form,
+#settings,
+#task-detail,
+#task-creation-form {
+    z-index: 1;
+    width: 80%;
+    height: fit-content;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#csv-import-form-header,
+#list-creation-form-header,
+#task-creation-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-csv-import-form-button,
+#close-list-creation-form-button,
+#close-task-creation-form-button {
+    background-color: var(--default-grey-color);
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px var(--button-box-shadow-color);
+    width: 20px;
+    height: 20px;
+}
+
+.csv-import-form-rules {
+    border: 2px solid #ffa60066;
+    border-radius: 16px;
+    background-color: #ffff004d;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 18px;
+}
+
+#csv-import-form-input-text {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    height: 40vh;
+    resize: none;
+}
+
+.form-rules-warning-sign {
+    width: 40px;
+    height: 40px;
+}
+
+.csv-import-form-rule-text {
+    width: 80%;
+    margin: 10px;
+}
+
+#load-csv-button {
+    margin-top: 12px;
+    width: 100%;
+}
+
+#task-detail-content {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    height: 15vh;
+    resize: none;
+}
+
+#save-task-button {
+    margin-top: 12px;
+    background-color: green;
+    color: white;
+}
+
+/* Settings background color selection */
+
+#board-bg-color-palette {
+    display: flex;
+    justify-content: space-between;
+}
+
+#board-bg-color-palette div {
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.board-bg-white {
+    background-color: #ffffff;
+}
+
+.board-bg-blue {
+    background-color: #B8CBD0;
+}
+
+.board-bg-green {
+    background-color: #D0D6B3;
+}
+
+.board-bg-red {
+    background-color: #1282A2;
+}
+
+.board-bg-purple {
+    background-color: #7A9E7E;
+}
+
+/* Dynamic classes */
+
+.hidden {
+    display: none;
+}
+
+.blurred {
+    filter: blur(4px);
+}
+
+.task-dragging {
+    transform: rotateZ(5deg);
+}
+
+.list-header-button-active {
+    background-color: grey;
+}
+
+.task-done {
+    background-color: var(--default-grey-color);
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+/* TODO */
+.detected-list {
+    border: 6px dashed red;
+    background-color: rgba(255, 0, 0, 0.2);
+}
