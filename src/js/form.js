@@ -7,16 +7,16 @@ class Form {
 
     show({ blur = false } = {}) {
         if (!this.isVisible) {
-            this.dom.classList.remove('hidden');
-            if (blur) this.listContainer?.classList.add('blurred');
+            this.dom.classList.remove("hidden");
+            if (blur) this.listContainer?.classList.add("blurred");
             this.isVisible = true;
         }
     }
 
     hide() {
         if (this.isVisible) {
-            this.dom.classList.add('hidden');
-            this.listContainer?.classList.remove('blurred');
+            this.dom.classList.add("hidden");
+            this.listContainer?.classList.remove("blurred");
             this.isVisible = false;
         }
     }

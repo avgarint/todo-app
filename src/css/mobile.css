@@ -1,5 +1,5 @@
 @media only screen and (max-width : 600px) {
-    .application-header {
+    header {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -14,7 +14,7 @@
         display: none;
     }
 
-    #list-container {
+    main {
         overflow-x: hidden;
         overflow-y: scroll;
     }

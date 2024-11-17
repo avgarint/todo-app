@@ -23,29 +23,36 @@
     </head>
     <body>
 
-        <header class="application-header">
+        <header>
             <h1 class="application-logo">!TODO</h1>
-            <input id="application-search-bar" alt="Search bar" type="text" placeholder="Search for lists...">
-            <input id="application-settings-button" alt="Settings button" type="image" src="./images/settings.svg"> 
-            <input id="application-info-button" alt="Info button" type="image" src="./images/info.svg">
-            <img class="profile-picture" alt="Profile picture" src="./images/pfp.gif">
+            <input id="application-search-bar" alt="Search bar" type="text" placeholder="Search for lists..." >
+            <input id="application-settings-button" alt="Settings button" type="image" src="images/settings.svg"> 
+            <input id="application-info-button" alt="Info button" type="image" src="images/info.svg">
+            <img class="profile-picture" alt="Profile picture" src="images/pfp.gif">
         </header>
+
+        <main>
+            <button id="create-new-list-button">
+                <img alt="Create new list" src="images/add.svg">
+            </button>
+            <!-- Lists and tasks are added dynamically here -->
+        </main>
 
         <!-- List creation form -->
         <div id="list-creation-form" class="hidden">
             <div id="list-creation-form-header">
                 <h2>Create new list</h2>
-                <input id="close-list-creation-form-button" type="image" src="./images/close.svg">
+                <input id="close-list-creation-form-button" type="image" src="images/close.svg">
             </div>
-            <input id="list-name-input" name="list-name-input" type="text" placeholder="">
+            <input id="list-name-input" name="list-name-input" type="text">
             <button id="list-form-confirm-creation">Create</button>
         </div>
 
-        <!--Task creation form -->
+        <!-- Task creation form -->
         <div id="task-creation-form" class="hidden">
             <div id="task-creation-form-header">
                 <h2>Create new task</h2>
-                <input id="close-task-creation-form-button" type="image" src="./images/close.svg">
+                <input id="close-task-creation-form-button" type="image" src="images/close.svg">
             </div>
             <h3>Name:</h3>
             <input id="task-name-input" name="task-name-input" type="text">
@@ -58,10 +65,10 @@
         <div id="csv-import-form" class="hidden">
             <div id="csv-import-form-header">
                 <h3 class="csv-import-form-header-text">Import CSV</h3>
-                <input id="close-csv-import-form-button" alt= "Close CSV import form button" type="image" src="./images/close.svg"></input>
+                <input id="close-csv-import-form-button" alt= "Close CSV import form button" type="image" src="images/close.svg"></input>
             </div>
             <div class="csv-import-form-rules">
-                <img class="form-rules-warning-sign" alt="CSV warning sign" src="./images/warning.svg">
+                <img class="form-rules-warning-sign" alt="CSV warning sign" src="images/warning.svg">
                 <h4 class="csv-import-form-rule-text">The CSV must have the following header: name;date;content;done</h4>
             </div>
             <textarea id="csv-import-form-input-text" name="CSV import text area" placeholder="Enter CSV here..." spellcheck="false"></textarea>
@@ -69,7 +76,7 @@
         </div>
 
         <!-- Settings form -->
-        <div id="settings" class="hidden">
+        <div id="settings-form" class="hidden">
             <h2>Settings</h2>
             <h3>Board background color</h3>
             <h4>Presets:</h4>
@@ -90,7 +97,8 @@
             <h3>Version 1.0.0 - 2023</h3>
         </div>
 
-        <div id="task-detail" class="hidden">
+        <!-- Task edition form -->
+        <div id="task-edition-form" class="hidden">
             <h2 id="task-detail-name" spellcheck="false" contenteditable="true"></h2>
             <h3 id="task-detail-date" spellcheck="false" contenteditable="true"></h3>
             <textarea id="task-detail-content" placeholder="Enter a description..."></textarea>
@@ -98,11 +106,5 @@
             <button id="save-task-button">Save</button>
         </div>
 
-        <div id="list-container">
-            <button id="create-new-list-button">
-                <img alt="Create new list" src="./images/add.svg">
-            </button>
-            <!-- Lists and tasks are added dynamically here -->
-        </div>
     </body>
 </html>

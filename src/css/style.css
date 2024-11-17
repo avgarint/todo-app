@@ -44,7 +44,7 @@ button {
 
 /* Application header */
 
-.application-header {
+header {
     background-color: var(--application-header-background-color);
     height: 55px;
     display: flex;
@@ -90,7 +90,7 @@ button {
     border-radius: 20px;
 }
 
-#list-container {
+main {
     padding: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -194,8 +194,8 @@ button {
 #csv-import-form,
 #list-creation-form,
 #info-form,
-#settings,
-#task-detail,
+#settings-form,
+#task-edition-form,
 #task-creation-form {
     z-index: 1;
     width: 80%;

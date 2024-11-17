@@ -2,13 +2,13 @@ class TaskEditionForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
 
-        this.taskName = document.getElementById('task-detail-name');
-        this.taskDate = document.getElementById('task-detail-date');
-        this.taskContent = document.getElementById('task-detail-content');
+        this.taskName = document.getElementById("task-detail-name");
+        this.taskDate = document.getElementById("task-detail-date");
+        this.taskContent = document.getElementById("task-detail-content");
 
         this.bindEventListeners();
     }
-    
+
     show(list, task) {
         super.show(false);
 
@@ -21,9 +21,9 @@ class TaskEditionForm extends Form {
     }
 
     bindEventListeners() {
-        const saveButton = document.getElementById('save-task-button');
+        const saveButton = document.getElementById("save-task-button");
 
-        saveButton.addEventListener('click', () => {
+        saveButton.addEventListener("click", () => {
             this.saveChanges();
             super.hide();
         });
@@ -34,14 +34,14 @@ class TaskEditionForm extends Form {
             this.task.name = this.taskName.innerHTML;
             this.task.date = this.taskDate.innerHTML;
             this.task.content = this.taskContent.value;
-        
+
             this.list.saveInLocalStorage();
             this.list.render();
         } else {
-            throw new Error('Trying to save data on a null list or task.');
+            throw new Error("Trying to save data on a null list or task.");
         }
     }
 }
 
-const taskEditionFormDOM = document.getElementById('task-detail');
+const taskEditionFormDOM = document.getElementById("task-edition-form");
 const taskEditionForm = new TaskEditionForm(taskEditionFormDOM, listContainer);

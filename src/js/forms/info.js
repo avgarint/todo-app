@@ -5,12 +5,17 @@ class InfoForm extends Form {
     }
 
     initEventListeners() {
-        const infoButton = document.getElementById('application-info-button');
+        const infoButton = document.getElementById("application-info-button");
         if (infoButton) {
-            infoButton.addEventListener('click', () => this.toggle({ blur: true }));
+            infoButton.addEventListener("click", () =>
+                this.toggle({ blur: true })
+            );
         }
     }
 }
 
-const infoFormDOM = document.getElementById('info-form');
-const infoForm = new InfoForm(infoFormDOM, document.getElementById('list-container'));
+const infoFormDOM = document.getElementById("info-form");
+const infoForm = new InfoForm(
+    infoFormDOM,
+    document.getElementById("list-container")
+);

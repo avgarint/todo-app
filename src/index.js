@@ -1,31 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const lists = document.querySelectorAll('.list');
-    const tasks = document.querySelectorAll('.task');
+document.addEventListener("DOMContentLoaded", () => {
+    const lists = document.querySelectorAll(".list");
+    const tasks = document.querySelectorAll(".task");
 
     let dropTarget = null; // Keep track of the potential target list
     let draggedTask = null; // Keep track of dragged task
-    
+
     lists.forEach((list) => {
-        list.addEventListener('dragover', (event) => {
+        list.addEventListener("dragover", (event) => {
             event.preventDefault();
-            const taskAtPoint = document.elementFromPoint(event.clientX, event.clientY);
+            const taskAtPoint = document.elementFromPoint(
+                event.clientX,
+                event.clientY
+            );
 
             if (taskAtPoint) {
-                if (taskAtPoint.classList.contains('task')) {
+                if (taskAtPoint.classList.contains("task")) {
                     // Distance between the cursor and taskAtPoint
-                    const offset = event.clientY - taskAtPoint.getBoundingClientRect().top;
+                    const offset =
+                        event.clientY - taskAtPoint.getBoundingClientRect().top;
 
                     // Determine where we should insert the dragged task
                     const insertBefore = offset < taskAtPoint.clientHeight / 2;
-                    taskAtPoint.parentElement.insertBefore(draggedTask, insertBefore ? taskAtPoint : taskAtPoint.nextSibling);
-                } else if (taskAtPoint.classList.contains('list')) {
+                    taskAtPoint.parentElement.insertBefore(
+                        draggedTask,
+                        insertBefore ? taskAtPoint : taskAtPoint.nextSibling
+                    );
+                } else if (taskAtPoint.classList.contains("list")) {
                     taskAtPoint.appendChild(draggedTask);
                 }
             }
         });
 
-        list.addEventListener('drop', () => {
-            if (draggedTask && dropTarget && dropTarget !== draggedTask.parentElement) {
+        list.addEventListener("drop", () => {
+            if (
+                draggedTask &&
+                dropTarget &&
+                dropTarget !== draggedTask.parentElement
+            ) {
                 dropTarget.appendChild(draggedTask);
             }
 
@@ -34,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tasks.forEach((task) => {
-        task.addEventListener('dragstart', () => {
+        task.addEventListener("dragstart", () => {
             draggedTask = task;
-            task.classList.add('task-dragging');
+            task.classList.add("task-dragging");
         });
 
-        task.addEventListener('dragend', () => {
+        task.addEventListener("dragend", () => {
             draggedTask = null;
-            task.classList.remove('task-dragging');
+            task.classList.remove("task-dragging");
         });
     });
 });
@@ -55,8 +66,8 @@ function loadListsFromLocalStorage() {
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
 
-        if (key.startsWith('todo-app-tasks-')) {
-            const name = key.replace('todo-app-tasks-', '');
+        if (key.startsWith("todo-app-tasks-")) {
+            const name = key.replace("todo-app-tasks-", "");
             lists.push(new List(name));
         }
     }
