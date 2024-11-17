@@ -1,12 +1,8 @@
 class TaskCreationForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
-        this.bindEventListeners();
-    }
 
-    show(list) {
-        this.list = list;
-        super.show(true);
+        this.bindEventListeners();
     }
 
     bindEventListeners() {
@@ -19,6 +15,11 @@ class TaskCreationForm extends Form {
 
         confirmbutton.addEventListener("click", () => this.confirm());
         closeButton.addEventListener("click", () => super.hide());
+    }
+
+    show(list) {
+        this.list = list;
+        super.show(true);
     }
 
     confirm() {

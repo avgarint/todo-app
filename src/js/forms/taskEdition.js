@@ -2,11 +2,23 @@ class TaskEditionForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
 
+        this.initElements();
+        this.bindEventListeners();
+    }
+
+    initElements() {
         this.taskName = document.getElementById("task-detail-name");
         this.taskDate = document.getElementById("task-detail-date");
         this.taskContent = document.getElementById("task-detail-content");
+    }
 
-        this.bindEventListeners();
+    bindEventListeners() {
+        const saveButton = document.getElementById("save-task-button");
+
+        saveButton.addEventListener("click", () => {
+            this.saveChanges();
+            super.hide();
+        });
     }
 
     show(list, task) {
@@ -18,15 +30,6 @@ class TaskEditionForm extends Form {
         this.taskName.innerHTML = this.task.name;
         this.taskDate.innerHTML = this.task.date;
         this.taskContent.value = this.task.content;
-    }
-
-    bindEventListeners() {
-        const saveButton = document.getElementById("save-task-button");
-
-        saveButton.addEventListener("click", () => {
-            this.saveChanges();
-            super.hide();
-        });
     }
 
     saveChanges() {

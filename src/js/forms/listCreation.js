@@ -1,6 +1,7 @@
 class ListCreationForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
+
         this.initElements();
         this.bindEventListeners();
     }

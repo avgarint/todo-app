@@ -1,10 +1,11 @@
 class InfoForm extends Form {
     constructor(dom, listContainer) {
         super(dom, listContainer);
-        this.initEventListeners();
+
+        this.bindEventListeners();
     }
 
-    initEventListeners() {
+    bindEventListeners() {
         const infoButton = document.getElementById("application-info-button");
         if (infoButton) {
             infoButton.addEventListener("click", () =>

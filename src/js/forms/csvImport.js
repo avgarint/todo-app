@@ -14,14 +14,14 @@ class CSVImportForm extends Form {
         this.loadButton = this.dom.querySelector("#load-csv-button");
     }
 
-    show(list) {
-        super.show({ blur: true });
-        this.list = list;
-    }
-
     bindEventListeners() {
         this.closeButton?.addEventListener("click", () => this.hide());
         this.loadButton?.addEventListener("click", () => this.handleCSVLoad());
+    }
+
+    show(list) {
+        super.show({ blur: true });
+        this.list = list;
     }
 
     handleCSVLoad() {
