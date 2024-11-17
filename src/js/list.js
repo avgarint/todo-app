@@ -41,8 +41,7 @@ class List {
         this.loadCSVButton.className = "list-header-load-as-csv-button";
         this.filterButton.className = "list-header-filter-button";
         this.addNewTaskButton.className = "list-header-new-task-button";
-        this.orderByDueDateButton.className =
-            "list-header-order-by-due-date-button";
+        this.orderByDueDateButton.className = "list-header-order-by-due-date-button";
 
         this.deleteButton.type = "image";
         this.saveAsCSVButton.type = "image";
@@ -83,18 +82,10 @@ class List {
     bindEventListeners() {
         this.deleteButton.addEventListener("click", () => this.delete());
         this.saveAsCSVButton.addEventListener("click", () => this.saveAsCSV());
-        this.loadCSVButton.addEventListener("click", () =>
-            csvImportForm.show(this)
-        );
-        this.filterButton.addEventListener("click", () =>
-            this.toggleTaskFiltering()
-        );
-        this.addNewTaskButton.addEventListener("click", () =>
-            taskCreationForm.show(this)
-        );
-        this.orderByDueDateButton.addEventListener("click", () =>
-            this.orderByDueDate()
-        );
+        this.loadCSVButton.addEventListener("click", () => csvImportForm.show(this));
+        this.filterButton.addEventListener("click", () => this.toggleTaskFiltering());
+        this.addNewTaskButton.addEventListener("click", () => taskCreationForm.show(this));
+        this.orderByDueDateButton.addEventListener("click", () => this.orderByDueDate());
     }
 
     render() {

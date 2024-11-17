@@ -36,7 +36,9 @@ class Task {
         contentElem.textContent = this.content;
 
         // Apply "done" styling if needed
-        if (this.done) holder.classList.add("task-done");
+        if (this.done) {
+            holder.classList.add("task-done")
+        };
 
         // Attach event listeners
         holder.addEventListener("click", (event) => {
@@ -73,15 +75,10 @@ class Task {
 
     updateDOM() {
         if (this.taskElement) {
-            this.taskElement.querySelector(".task-name").textContent =
-                this.name;
-            this.taskElement.querySelector(".task-date").textContent =
-                this.date;
-            this.taskElement.querySelector(".task-content").textContent =
-                this.content;
-            const checkbox = this.taskElement.querySelector(
-                ".task-toggle-status"
-            );
+            this.taskElement.querySelector(".task-name").textContent = this.name;
+            this.taskElement.querySelector(".task-date").textContent = this.date;
+            this.taskElement.querySelector(".task-content").textContent = this.content;
+            const checkbox = this.taskElement.querySelector(".task-toggle-status");
             checkbox.checked = this.done;
             this.taskElement.classList.toggle("task-done", this.done);
         }
