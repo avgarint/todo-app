@@ -1,6 +1,6 @@
 # todo-app
 
-A todo app with lists and tasks inspired by Trello.
+A todo app with lists and tasks.
 
 | Full screen | Mobile |
 | :---:   | :---: |
