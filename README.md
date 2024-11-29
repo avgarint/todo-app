@@ -1,6 +1,5 @@
 # todo-app
-
-A todo app with lists and tasks.
+Todo application with lists and tasks.
 
 | Full screen | Mobile |
 | :---:   | :---: |
